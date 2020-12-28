@@ -1,0 +1,12 @@
+<form [formGroup]='options' (submit)="onSubmit()">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%;">
+        <mat-label>
+            Add New
+        </mat-label>
+        <input matInput placeholder="Enter item to Add into the list" [formControl]="item" />
+        <mat-error *ngIf="item.errors?.required">Please Enter an Item to continue</mat-error>
+        <button type="submit" matSuffix mat-mini-fab color="primary">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-form-field>
+</form>

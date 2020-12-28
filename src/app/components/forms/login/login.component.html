@@ -1,0 +1,21 @@
+<form [formGroup]="optionsLogin" (submit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <mat-icon matPrefix>mail</mat-icon>
+        <input matInput placeholder="Please Enter Email here" type="email" [formControl]="loginEmail">
+        <mat-hint>e.g: abc@xyz.com</mat-hint>
+        <mat-error *ngIf="loginEmail.errors?.required">Email is required</mat-error>
+        <mat-error *ngIf="loginEmail.errors?.email">Email is not valid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input matInput placeholder="Please Enter Name here" #password type="password" [formControl]="loginPassword">
+        <mat-icon matSuffix (click)="changeVisibility(password)">{{visibilityIcon}}</mat-icon>
+        <mat-hint>e.g: 8 character are required</mat-hint>
+        <mat-error *ngIf="loginPassword.errors?.required">Password is required</mat-error>
+        <mat-error *ngIf="loginPassword.errors?.minlength">Minlength should be 8 characters</mat-error>
+    </mat-form-field>
+    <button mat-button color="primary" type="submit">Login</button>
+</form>

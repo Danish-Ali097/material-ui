@@ -1,0 +1,25 @@
+.drawer {
+  background: #673ab7;
+  color: white;
+  width: 200px;
+}
+.drawer h2 {
+  font-size: 1.5rem;
+  margin: 10px 30px;
+}
+.drawer mat-nav-list a {
+  color: white;
+  text-align: center;
+}
+.drawer mat-nav-list a span {
+  padding: 0 10px;
+}
+
+.container {
+  height: 93vh;
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
